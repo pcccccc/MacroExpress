@@ -399,6 +399,11 @@ public extension Express {
     return self
   }
   
+  func close() {
+    let server = http.createServer(handler: requestHandler)
+    server.close(callback: nil)
+  }
+  
   /**
    * Create an HTTP server (using http.server) with the `Express` instance
    * as the handler, and then start listening.
