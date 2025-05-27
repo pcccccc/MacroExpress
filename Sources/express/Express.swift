@@ -401,7 +401,7 @@ public extension Express {
   
   func close() {
     let server = http.createServer(handler: requestHandler)
-    server.close(callback: nil)
+    server.forceClose(callback: nil)
   }
   
   /**
